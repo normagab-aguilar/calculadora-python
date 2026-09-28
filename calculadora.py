@@ -16,6 +16,12 @@ def multiplicar(a, b):
     return a * b
 
 
+def dividir(a, b):
+    if b == 0:
+        raise ValueError("No se puede dividir entre cero.")
+    return a / b
+
+
 def mostrar_menu():
     print("\n===== Calculadora =====")
     print("1. Sumar")
@@ -43,11 +49,12 @@ def main():
             print("Hasta luego!")
             break
 
-        num1 = None
-        num2 = None
-        if opcion in ("1", "2", "3"):
-            num1 = pedir_numero("Ingresá el primer número: ")
-            num2 = pedir_numero("Ingresá el segundo número: ")
+        if opcion not in ("1", "2", "3", "4"):
+            print("Opcion invalida, intenta de nuevo.")
+            continue
+
+        num1 = pedir_numero("Ingresá el primer número: ")
+        num2 = pedir_numero("Ingresá el segundo número: ")
 
         if opcion == "1":
             print(f"Resultado: {sumar(num1, num2)}")
@@ -55,8 +62,11 @@ def main():
             print(f"Resultado: {restar(num1, num2)}")
         elif opcion == "3":
             print(f"Resultado: {multiplicar(num1, num2)}")
-        else:
-            print("Funcion aun no implementada.")
+        elif opcion == "4":
+            try:
+                print(f"Resultado: {dividir(num1, num2)}")
+            except ValueError as e:
+                print(f"Error: {e}")
 
 
 if __name__ == "__main__":
