@@ -12,6 +12,10 @@ def restar(a, b):
     return a - b
 
 
+def multiplicar(a, b):
+    return a * b
+
+
 def mostrar_menu():
     print("\n===== Calculadora =====")
     print("1. Sumar")
@@ -41,7 +45,7 @@ def main():
 
         num1 = None
         num2 = None
-        if opcion in ("1", "2"):
+        if opcion in ("1", "2", "3"):
             num1 = pedir_numero("Ingresá el primer número: ")
             num2 = pedir_numero("Ingresá el segundo número: ")
 
@@ -49,6 +53,8 @@ def main():
             print(f"Resultado: {sumar(num1, num2)}")
         elif opcion == "2":
             print(f"Resultado: {restar(num1, num2)}")
+        elif opcion == "3":
+            print(f"Resultado: {multiplicar(num1, num2)}")
         else:
             print("Funcion aun no implementada.")
 
