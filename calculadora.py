@@ -8,6 +8,10 @@ def sumar(a, b):
     return a + b
 
 
+def restar(a, b):
+    return a - b
+
+
 def mostrar_menu():
     print("\n===== Calculadora =====")
     print("1. Sumar")
@@ -35,10 +39,16 @@ def main():
             print("Hasta luego!")
             break
 
-        if opcion == "1":
+        num1 = None
+        num2 = None
+        if opcion in ("1", "2"):
             num1 = pedir_numero("Ingresá el primer número: ")
             num2 = pedir_numero("Ingresá el segundo número: ")
+
+        if opcion == "1":
             print(f"Resultado: {sumar(num1, num2)}")
+        elif opcion == "2":
+            print(f"Resultado: {restar(num1, num2)}")
         else:
             print("Funcion aun no implementada.")
 
