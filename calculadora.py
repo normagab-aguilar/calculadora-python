@@ -4,6 +4,10 @@ Proyecto Integrador - Git y GitHub
 """
 
 
+def sumar(a, b):
+    return a + b
+
+
 def mostrar_menu():
     print("\n===== Calculadora =====")
     print("1. Sumar")
@@ -31,7 +35,12 @@ def main():
             print("¡Hasta luego!")
             break
 
-        print("Función aún no implementada.")
+        if opcion == "1":
+            num1 = pedir_numero("Ingresá el primer número: ")
+            num2 = pedir_numero("Ingresá el segundo número: ")
+            print(f"Resultado: {sumar(num1, num2)}")
+        else:
+            print("Función aún no implementada.")
 
 
 if __name__ == "__main__":
