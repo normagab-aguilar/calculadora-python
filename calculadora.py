@@ -8,20 +8,6 @@ def sumar(a, b):
     return a + b
 
 
-def restar(a, b):
-    return a - b
-
-
-def multiplicar(a, b):
-    return a * b
-
-
-def dividir(a, b):
-    if b == 0:
-        raise ValueError("No se puede dividir entre cero.")
-    return a / b
-
-
 def mostrar_menu():
     print("\n===== Calculadora =====")
     print("1. Sumar")
@@ -43,30 +29,18 @@ def pedir_numero(mensaje):
 def main():
     while True:
         mostrar_menu()
-        opcion = input("Elegi una opcion (1-5): ")
+        opcion = input("Elegí una opción (1-5): ")
 
         if opcion == "5":
-            print("Hasta luego!")
+            print("¡Hasta luego!")
             break
 
-        if opcion not in ("1", "2", "3", "4"):
-            print("Opcion invalida, intenta de nuevo.")
-            continue
-
-        num1 = pedir_numero("Ingresá el primer número: ")
-        num2 = pedir_numero("Ingresá el segundo número: ")
-
         if opcion == "1":
+            num1 = pedir_numero("Ingresá el primer número: ")
+            num2 = pedir_numero("Ingresá el segundo número: ")
             print(f"Resultado: {sumar(num1, num2)}")
-        elif opcion == "2":
-            print(f"Resultado: {restar(num1, num2)}")
-        elif opcion == "3":
-            print(f"Resultado: {multiplicar(num1, num2)}")
-        elif opcion == "4":
-            try:
-                print(f"Resultado: {dividir(num1, num2)}")
-            except ValueError as e:
-                print(f"Error: {e}")
+        else:
+            print("Función aún no implementada.")
 
 
 if __name__ == "__main__":
